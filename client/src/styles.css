@@ -1,0 +1,67 @@
+:root { --bg:#1e1e1e; --panel:#252526; --panel2:#2d2d30; --border:#3c3c3c; --text:#d4d4d4; --muted:#8b8b8b; --accent:#4f8cff; --danger:#e5484d; }
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; }
+body { background: var(--bg); color: var(--text); font: 14px/1.45 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+button, input { font: inherit; color: inherit; }
+button { background: var(--panel2); border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px; cursor: pointer; }
+button:hover:not(:disabled) { border-color: var(--accent); }
+button:disabled { opacity: .45; cursor: not-allowed; }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+button.danger { color: var(--danger); }
+input { background: #1b1b1c; border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; width: 100%; }
+input:focus { outline: 1px solid var(--accent); }
+a { color: var(--accent); text-decoration: none; }
+.muted { color: var(--muted); } .pad { padding: 10px; } .spacer { flex: 1; }
+.error { color: #ff8a8e; background: #3a1f20; border: 1px solid #5c2b2d; padding: 8px 10px; border-radius: 6px; }
+.banner { border-radius: 0; }
+.center { height: 100%; display: flex; align-items: center; justify-content: center; padding: 16px; }
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+.card h1, .card h2 { margin: 0; } .card p { margin: 0; }
+.auth { width: 100%; max-width: 380px; }
+.tabs { display: flex; gap: 6px; } .tabs button { flex: 1; } .tabs .active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.topbar { display: flex; align-items: center; gap: 10px; padding: 8px 14px; background: var(--panel); border-bottom: 1px solid var(--border); }
+.topbar .back { font-size: 18px; }
+.dash main { max-width: 900px; margin: 0 auto; padding: 20px 16px; display: flex; flex-direction: column; gap: 14px; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.list { display: flex; flex-direction: column; gap: 8px; }
+.card.row { flex-direction: row; justify-content: space-between; align-items: center; color: inherit; }
+.card.row:hover { border-color: var(--accent); }
+.ws { height: 100%; display: flex; flex-direction: column; }
+.ws .body { flex: 1; display: flex; min-height: 0; }
+.code { background: var(--panel2); padding: 3px 8px; border-radius: 6px; cursor: pointer; font-size: 12px; }
+.dot { width: 9px; height: 9px; border-radius: 50%; } .dot.on { background: #3fb950; } .dot.off { background: #d29922; }
+.avatars { display: flex; } .avatar { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 600; color: #fff; margin-left: -6px; border: 2px solid var(--panel); }
+.avatar.away { opacity: .4; }
+.filetree { width: 230px; background: var(--panel); border-right: 1px solid var(--border); display: flex; flex-direction: column; flex-shrink: 0; }
+.ft-head, .panel-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 10px; font-size: 12px; border-bottom: 1px solid var(--border); }
+.ft-head button, .panel-head button { padding: 2px 6px; font-size: 12px; }
+.ft-body { flex: 1; overflow: auto; padding: 4px 0; }
+.node { display: flex; justify-content: space-between; align-items: center; padding: 3px 8px; cursor: pointer; white-space: nowrap; }
+.node:hover { background: var(--panel2); } .node.active { background: #37373d; } .node.seldir { outline: 1px dashed var(--border); }
+.node .actions { display: none; } .node:hover .actions { display: inline; }
+.node .actions button { border: 0; background: none; padding: 0 3px; }
+.main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.tabsbar { display: flex; background: var(--panel); overflow-x: auto; min-height: 33px; border-bottom: 1px solid var(--border); }
+.tab { display: flex; align-items: center; gap: 6px; padding: 6px 10px; border-right: 1px solid var(--border); cursor: pointer; white-space: nowrap; color: var(--muted); }
+.tab.active { background: var(--bg); color: var(--text); box-shadow: inset 0 2px var(--accent); }
+.tab button { border: 0; background: none; padding: 0 2px; }
+.pip { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.editor { flex: 1; min-height: 0; }
+.status { display: flex; padding: 2px 12px; background: #0e639c; color: #fff; font-size: 12px; }
+.output { height: 190px; display: flex; flex-direction: column; background: var(--panel); border-top: 1px solid var(--border); }
+.output pre { flex: 1; margin: 0; padding: 8px 12px; overflow: auto; font: 13px/1.4 ui-monospace, Menlo, Consolas, monospace; white-space: pre-wrap; }
+.output .err { color: #ff8a8e; } .stdin { max-width: 300px; padding: 3px 8px; }
+.ai { width: 340px; background: var(--panel); border-left: 1px solid var(--border); display: flex; flex-direction: column; flex-shrink: 0; }
+.msgs { flex: 1; overflow: auto; padding: 8px; display: flex; flex-direction: column; gap: 8px; }
+.msg { padding: 8px 10px; border-radius: 8px; background: var(--panel2); } .msg.user { background: #1f3a63; align-self: flex-end; max-width: 92%; }
+.msg .txt { white-space: pre-wrap; word-break: break-word; }
+.codeblock { margin: 6px 0; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.cb-head { display: flex; justify-content: space-between; padding: 3px 8px; background: #1b1b1c; font-size: 12px; } .cb-head button { padding: 1px 6px; font-size: 11px; margin-left: 4px; }
+.codeblock pre { margin: 0; padding: 8px; overflow: auto; background: #151515; font: 12px/1.4 ui-monospace, Menlo, Consolas, monospace; }
+.quick { display: flex; flex-wrap: wrap; gap: 6px; padding: 6px 8px; } .quick button { font-size: 12px; padding: 2px 8px; }
+.ai-input { display: flex; gap: 6px; padding: 8px; border-top: 1px solid var(--border); }
+/* remote cursors (y-monaco) */
+.yRemoteSelection { opacity: .35; }
+.yRemoteSelectionHead { position: absolute; border-left: 2px solid; height: 100%; box-sizing: border-box; }
+.yRemoteSelectionHead::after { position: absolute; top: -1.35em; left: -2px; color: #fff; font-size: 11px; line-height: 1.2; padding: 1px 5px; border-radius: 3px 3px 3px 0; white-space: nowrap; pointer-events: none; }
+@media (max-width: 900px) { .ai { display: none; } .filetree { width: 170px; } }
